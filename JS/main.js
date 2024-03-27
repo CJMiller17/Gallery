@@ -1,40 +1,35 @@
-const displayedImage = document.querySelector('.displayed-img'); //I need to do something with this. 
-                                                                 //Swap it out with the selected image.Event listener stuff
+const displayedImage = document.querySelector('.displayed-img'); 
 const thumbBar = document.querySelector('.thumb-bar');
 
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
-
-/* Declaring the array of image filenames */
-const picArray = [pic1.jpg, pic2.jpg, pic3.jpg, pic4.jpg, pic5.jpg]; //I need to call these to correspond with what's clicked
-                                                                                     
-/* Declaring the alternative text for each image file */
+const picArray = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg"];
 const altText =
 {
-    pic1.jpg: "Close up of a human eye",
-    pic2.jpg: "A obscure image of wavy brown, perhaps a rock formation",
-    pic3.jpg: "White and purple pansies",
-    pic4.jpg: "Egyptian painting with three figures. One with a dog head",
-    pic5.jpg: "Picture of a brown butterfly sitting on an elephant ear leaf"
+    'pic1.jpg': "Close up of a human eye",
+    'pic2.jpg': "A obscure image of wavy brown, perhaps a rock formation",
+    'pic3.jpg': "White and purple pansies",
+    'pic4.jpg': "Egyptian painting with three figures. One with a dog head",
+    'pic5.jpg': "Picture of a brown butterfly sitting on an elephant ear leaf"
 };
-/* Looping through images */
+
     //This creates the thumbnail
-const newImage = document.createElement('img'); //This creates an element within the last div. I think it creates an <img>
-newImage.setAttribute("src", img/ + array[e]); //This sets the source. Effectively making the image appear
-newImage.setAttribute("alt", altText.keys(e)); // This sets the alt text for the photo
-thumbBar.appendChild(newImage); //This adds the photos to the thumb bar.
-newImage.addEventListener("click", e =>) {
-    //e should get some number that responds to the indices.
+for (let i = 0; i < picArray.length; i++) {
+
+    const newImage = document.createElement('img');
+        // console.log('item in array: ', picArray[i])
+    // console.log('alt text for item: ', altText[picArray[i]])
+    newImage.setAttribute("src", "img/" + picArray[i]);
+    newImage.setAttribute("alt", altText[picArray[i]]);
+    thumbBar.appendChild(newImage);
+    newImage.addEventListener("click", e => {
+        displayedImage.src = e.target.src
+        displayedImage.alt = e.target.alt
+    })
 }
+/*
+picArray.forEach(image, index) => {
+    console.log('image: ', image)
+    console.log('index: ', index)
 
-//for (photo of picArrayrray) {  I dont understand why we need a loop. We are just clicking.
-
-//}
-
-/* Wiring up the Darken/Lighten button */
-//Use btn and overlay
-
-//NOTES//
-/*  -Probably going to use for...of loop
-    -
 */
