@@ -6,7 +6,7 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
-const array = [pic1.jpg, pic2.jpg, pic3.jpg, pic4.jpg, pic5.jpg]; //I need to call these to correspond with what's clicked
+const picArray = [pic1.jpg, pic2.jpg, pic3.jpg, pic4.jpg, pic5.jpg]; //I need to call these to correspond with what's clicked
                                                                                      
 /* Declaring the alternative text for each image file */
 const altText =
@@ -20,9 +20,16 @@ const altText =
 /* Looping through images */
     //This creates the thumbnail
 const newImage = document.createElement('img'); //This creates an element within the last div. I think it creates an <img>
-newImage.setAttribute('src', array[]); //This sets the source. Effectively making the image appear
-newImage.setAttribute('alt', xxx); // This sets the alt text for the photo
+newImage.setAttribute("src", img/ + array[e]); //This sets the source. Effectively making the image appear
+newImage.setAttribute("alt", altText.keys(e)); // This sets the alt text for the photo
 thumbBar.appendChild(newImage); //This adds the photos to the thumb bar.
+newImage.addEventListener("click", e =>) {
+    //e should get some number that responds to the indices.
+}
+
+//for (photo of picArrayrray) {  I dont understand why we need a loop. We are just clicking.
+
+//}
 
 /* Wiring up the Darken/Lighten button */
 //Use btn and overlay
