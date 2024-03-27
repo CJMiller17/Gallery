@@ -12,13 +12,10 @@ const altText =
     'pic4.jpg': "Egyptian painting with three figures. One with a dog head",
     'pic5.jpg': "Picture of a brown butterfly sitting on an elephant ear leaf"
 };
-
-    //This creates the thumbnail
+//This creates the thumbnail
 for (let i = 0; i < picArray.length; i++) {
 
     const newImage = document.createElement('img');
-        // console.log('item in array: ', picArray[i])
-    // console.log('alt text for item: ', altText[picArray[i]])
     newImage.setAttribute("src", "img/" + picArray[i]);
     newImage.setAttribute("alt", altText[picArray[i]]);
     thumbBar.appendChild(newImage);
@@ -27,9 +24,16 @@ for (let i = 0; i < picArray.length; i++) {
         displayedImage.alt = e.target.alt
     })
 }
-/*
-picArray.forEach(image, index) => {
-    console.log('image: ', image)
-    console.log('index: ', index)
-
-*/
+//Creating the button that change text, opacity, and class
+btn.addEventListener("click", e => {
+    const btnClass = btn.getAttribute("class");
+    if (btnClass === "dark") {
+        btn.setAttribute("class", "light");
+        btn.textContent = "lighten";
+        overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
+    } else {
+        btn.setAttribute("class", "dark");
+        btn.textContent = "darken";
+        overlay.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+});
