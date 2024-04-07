@@ -16,7 +16,7 @@ const altText =
 for (let i = 0; i < picArray.length; i++) {
 
     const newImage = document.createElement('img');
-    newImage.setAttribute("src", "img/" + picArray[i]);
+    newImage.setAttribute("src", "IMG/" + picArray[i]);
     newImage.setAttribute("alt", altText[picArray[i]]);
     thumbBar.appendChild(newImage);
     newImage.addEventListener("click", e => {
